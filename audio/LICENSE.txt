@@ -1,0 +1,6 @@
+الأصوات في هذا المجلد مولّدة آلياً لتطبيق «درب الإملاء».
+- الجمل: صوت Piper «ar_JO-kareem-medium» (بيانات: github.com/AliMokhammad/arabicttstrain).
+- الكلمات المفردة: صوت «ar_JO-SA_dii-high» (OpenVoiceOS / TigreGotico)، المرخّص بـ
+  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC BY-NC-SA 4.0):
+  https://creativecommons.org/licenses/by-nc-sa/4.0/
+  فيُستعمل هذا الصوت ومقاطعه استعمالاً غير تجاري، مع ذكر المصدر، وبالرخصة نفسها عند إعادة النشر.
