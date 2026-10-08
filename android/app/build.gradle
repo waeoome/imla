@@ -1,0 +1,41 @@
+plugins {
+    id 'com.android.application'
+}
+
+// رقم الإصدار يزيد تلقائيًّا مع كل بناء على GitHub، فيُثبَّت الإصدار الجديد فوق القديم
+def buildNo = (System.getenv('GITHUB_RUN_NUMBER') ?: '1') as Integer
+
+android {
+    namespace 'com.wael.darbimla'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.wael.darbimla'
+        minSdk 24
+        targetSdk 34
+        versionCode buildNo
+        versionName "1.${buildNo}"
+    }
+
+    // مفتاح توقيع ثابت: لازم ليقبل الهاتف التحديثات فوق النسخة المثبّتة
+    signingConfigs {
+        release {
+            storeFile file('../release.jks')
+            storePassword System.getenv('KEYSTORE_PASSWORD') ?: 'darbimla2026'
+            keyAlias 'darb'
+            keyPassword System.getenv('KEYSTORE_PASSWORD') ?: 'darbimla2026'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
